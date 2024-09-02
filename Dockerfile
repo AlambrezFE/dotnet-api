@@ -3,13 +3,15 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 
-RUN dotnet new webapi -n CourseApi
+RUN dotnet new webapi -n back-net2
 
-COPY appsettings.json /src/CourseApi/appsettings.json
+COPY appsettings.json /src/back-net2/appsettings.json
 
-COPY Controllers /src/CourseApi/
+COPY Controllers /src/back-net2/
 
-WORKDIR /src/CourseApi
+COPY Program.cs /src/back-net2/Program.cs
+
+WORKDIR /src/back-net2
 
 RUN dotnet restore
 
