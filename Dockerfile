@@ -24,5 +24,5 @@ EXPOSE 8080
 
 COPY --from=build /app/publish .
 
-ENTRYPOINT ["dotnet", "CourseApi.dll"]
+ENTRYPOINT ["dotnet", "back-net2.dll"]
 
